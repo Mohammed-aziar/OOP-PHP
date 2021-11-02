@@ -38,12 +38,12 @@
         public $ownerName;
 
         //constants
-        const CHIP="A9";
-        
+        const OWNERNAME=3;
+
         //Methods
         public function setOwnerName(){
-            if(strlen($this->ownerName)<3)
-            echo "Owner Name cant be less tha, 3 chars";
+            if(strlen($this->ownerName)<self::OWNERNAME)
+            echo "Owner Name cant be less tha, ".self::OWNERNAME." chars";
         }
         public function doubleHomePressed(){
             echo "this iphone ram is ".$this -> ram;
@@ -58,6 +58,10 @@
     $iphone6plus-> ownerName  = 'ali';
     $iphone6plus->doubleHomePressed();
     $iphone6plus->setOwnerName();
+    /*  
+        echo AppleDevice::OWNERNAME;
+        echo $iphone6plus::OWNERNAME;
+    */
     echo    "<pre>";
     echo    var_dump($iphone6plus);
     echo    "</pre>";
