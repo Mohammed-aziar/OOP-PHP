@@ -14,7 +14,7 @@
     -[ new ]    =   New Object keyword
     -[ Public , Private , Protected]    = Visibility Markers
     -[ -> ]     =   Apple Store
-
+    -[ $this ]  =   Pseudo varibale.
     Apple
     - Class       = Apple Blueprint Design
     - Object      = iPhone That chine Made
@@ -35,10 +35,18 @@
         public $inch=   "4inch";    //default value
         public $space=  "16GB";     //default value
         public $color=  "white";    //default value
+        public $ownerName;
 
+        //constants
+        const CHIP="A9";
+        
         //Methods
+        public function setOwnerName(){
+            if(strlen($this->ownerName)<3)
+            echo "Owner Name cant be less tha, 3 chars";
+        }
         public function doubleHomePressed(){
-            echo "this Device Does Not support this Feature";
+            echo "this iphone ram is ".$this -> ram;
         }
     }
 
@@ -47,6 +55,9 @@
     $iphone6plus-> inch  = '5 inch'; 
     $iphone6plus-> space  = '32GB';
     $iphone6plus-> color  = 'Gold';
+    $iphone6plus-> ownerName  = 'ali';
+    $iphone6plus->doubleHomePressed();
+    $iphone6plus->setOwnerName();
     echo    "<pre>";
     echo    var_dump($iphone6plus);
     echo    "</pre>";
@@ -56,11 +67,13 @@
     $iphone7plus-> inch  = '5.5 inch'; 
     $iphone7plus-> space  = '265GB';
     $iphone7plus-> color  = 'Black';
+    $iphone7plus->doubleHomePressed();
     echo    "<pre>";
     echo    var_dump($iphone7plus);
     echo    "</pre>";
 
     $iphone     =   new AppleDevice();
+    $iphone -> doubleHomePressed();
     echo    "<pre>";
     echo    var_dump($iphone);
     echo    "</pre>";
