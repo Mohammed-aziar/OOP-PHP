@@ -6,9 +6,13 @@
     -   class has properties
     -   variable inside class = [ Property ]
     -   variable outside class  =   [ variable ]
+    -   Functon inside class    =   [ Method]
+    -   Function outside class  =   [ Function ]
+
 
     -[ Class ]  =   Class keyword
     -[ new ]    =   New Object keyword
+    -[ Public , Private , Protected]    = Visibility Markers
     -[ -> ]     =   Apple Store
 
     Apple
@@ -27,11 +31,15 @@
     - Application = Blog System
 */
     class AppleDevice{
-        public $ram;
-        public $inch;
-        public $space;
-        public $color;
+        public $ram=    "1GB";      //default value
+        public $inch=   "4inch";    //default value
+        public $space=  "16GB";     //default value
+        public $color=  "white";    //default value
 
+        //Methods
+        public function doubleHomePressed(){
+            echo "this Device Does Not support this Feature";
+        }
     }
 
     $iphone6plus    =   new AppleDevice();
@@ -44,7 +52,16 @@
     echo    "</pre>";
 
     $iphone7plus    =   new AppleDevice();
+    $iphone7plus-> ram  = '4GB';
+    $iphone7plus-> inch  = '5.5 inch'; 
+    $iphone7plus-> space  = '265GB';
+    $iphone7plus-> color  = 'Black';
     echo    "<pre>";
     echo    var_dump($iphone7plus);
+    echo    "</pre>";
+
+    $iphone     =   new AppleDevice();
+    echo    "<pre>";
+    echo    var_dump($iphone);
     echo    "</pre>";
 ?>
